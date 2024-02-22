@@ -6,8 +6,10 @@ const logger = require("morgan"); // Require Morgan (Logs the requests received)
 const cookieParser = require("cookie-parser"); // Require Cookie Parser (Parse string to cookie)
 const cookieSession = require("cookie-session");
 
-const { authenticateUser, getUserByEmail } = require("./helpers/userHelpers");
 const { users } = require("./data/users");
+const generateUserHelpers = require("./helpers/userHelpers");
+
+const { authenticateUser, getUserByEmail } = generateUserHelpers(users);
 
 const app = express(); // Create an express server and reference with app
 // view engine setup
@@ -42,7 +44,7 @@ app.get("/secret", (req, res) => {
   // const { email } = req.cookies;
   const { email } = req.session;
 
-  const { err, user } = getUserByEmail(users, email);
+  const { err, user } = getUserByEmail(email);
 
   if (err) {
     console.log(err);
@@ -63,7 +65,7 @@ app.post("/login", (req, res) => {
 
   const { email, password } = req.body;
 
-  const { err, user } = authenticateUser(users, email, password);
+  const { err, user } = authenticateUser(email, password);
 
   if (err) {
     console.log(err);
