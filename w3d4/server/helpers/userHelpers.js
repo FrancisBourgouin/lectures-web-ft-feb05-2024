@@ -1,3 +1,5 @@
+const bcrypt = require("bcryptjs");
+
 const getUserByEmail = (users, email) => {
   const currentUser = users[email];
 
@@ -15,14 +17,15 @@ const authenticateUser = (users, email, password) => {
     return { err: "User not found", user: undefined };
   }
 
-  if (currentUser.password !== password) {
+  // if (currentUser.password !== password) {
+  if (!bcrypt.compareSync(password, currentUser.password)) {
     return { err: "Bad password", user: undefined };
   }
 
   return { err: undefined, user: currentUser };
 };
 
-const createUser = (users, userInfo) => {
+const createUser = (users, userInfo, salt) => {
   const { email, password, name, secret } = userInfo;
 
   if (!email || !password || !name || !secret) {
@@ -33,7 +36,7 @@ const createUser = (users, userInfo) => {
     return { err: "User exists with that email", user: undefined };
   }
 
-  const newUser = { email, password, name, secret };
+  const newUser = { email, password: bcrypt.hashSync(password, salt), name, secret };
   users[email] = newUser;
 
   return { err: undefined, user: newUser };

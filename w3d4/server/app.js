@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express"); // Requires Express Framework (Routing / Server)
 const path = require("path"); // Requires Path (Multiple OS path support)
 const logger = require("morgan"); // Require Morgan (Logs the requests received)
@@ -49,6 +51,10 @@ app.get("/secret", (req, res) => {
 
   const templateVars = { user };
   return res.render("secret", templateVars);
+});
+
+app.get("/api/users", (req, res) => {
+  return res.json(users);
 });
 
 app.post("/login", (req, res) => {
