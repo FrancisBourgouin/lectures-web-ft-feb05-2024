@@ -1,0 +1,31 @@
+:root {
+  --main-color: #fff;
+  --main-bg: #333;
+}
+
+:root {
+  font-size: 30px;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+}
+
+header h1 {
+  color: #b0b;
+}
+
+main > h1 {
+  color: #badaff;
+}
+main article h1 {
+  color: #c0ffee;
+}
+main article p {
+  font-weight: 900;
+}
+@media screen and (min-width: 1600px) {
+  main {
+    background-color: #000;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

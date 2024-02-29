@@ -1,0 +1,38 @@
+:root {
+  --main-color: #fff;
+  --main-bg: #333;
+}
+
+// $main-color: #fff;
+// $main-bg: #333;
+
+:root {
+  font-size: 30px;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+}
+header h1 {
+  color: #b0b;
+}
+
+main {
+  & > h1 {
+    color: #badaff;
+  }
+
+  article {
+    h1 {
+      color: #c0ffee;
+    }
+    p {
+      font-weight: 900;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    background-color: #000;
+  }
+}
+
+// document.getElementsByClassName("bob")
+// document.querySelectorAll(".bob")

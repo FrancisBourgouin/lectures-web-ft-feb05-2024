@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Units!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Units!
+        px => Pixels are fine, but stuck to a specific size
+        % => Is weird a little bit, but helps in specific cases
+        em => Element multiplier
+        rem => Root Element multiplier
+
+      16px => 700-800px
+
+        ch => characters (5ch => 00000)
+
+        vw (viewport width)
+        vh (viewport height)
+        vmin
+        vmax
+      */
+
+      html {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 30px;
+      }
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 25px;
+      }
+
+      p {
+        max-width: 80ch;
+      }
+
+      .posts {
+        font-size: 15px;
+        display: flex;
+        gap: 1em;
+        padding: 1em;
+      }
+
+      button {
+        font-size: 1.5rem;
+
+        padding: 0.5em 1em;
+        border-radius: 0.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HERO TITLE OF DESTINY</h1>
+    </header>
+    <section>
+      <h1>I am an h1 title</h1>
+      <h2>I am an h2 title</h2>
+      <h3>I am an h3 title</h3>
+      <h4>I am an h4 title</h4>
+      <h5>I am an h5 title</h5>
+      <h6>I am an h6 title</h6>
+      <p>I am a paragraph</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio facere
+        magnam reprehenderit tempora labore! Alias dicta deserunt cupiditate maxime? Dicta
+        voluptates excepturi corrupti, iusto consectetur nesciunt cupiditate fuga
+        voluptas!
+      </p>
+      <button>EVIL BUTTON</button>
+    </section>
+    <section class="posts">
+      <article>
+        <h1>Some blog post</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio facere
+          magnam reprehenderit tempora labore! Alias dicta deserunt cupiditate maxime?
+          Dicta voluptates excepturi corrupti, iusto consectetur nesciunt cupiditate fuga
+          voluptas!
+        </p>
+      </article>
+      <article>
+        <h1>Some blog post</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio facere
+          magnam reprehenderit tempora labore! Alias dicta deserunt cupiditate maxime?
+          Dicta voluptates excepturi corrupti, iusto consectetur nesciunt cupiditate fuga
+          voluptas!
+        </p>
+      </article>
+    </section>
+  </body>
+</html>

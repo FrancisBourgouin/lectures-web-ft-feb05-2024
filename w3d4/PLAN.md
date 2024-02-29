@@ -83,7 +83,7 @@ OUTPUT: Error (invalid field || existing user), userObject
 OUTPUT SHAPE: { err:"", user:{} }
 
 ```jsx
-const getUserByEmail = (email, password, name, secret) => {
+const createUser = (email, password, name, secret) => {
   if (!email || !password || !name || !secret) {
     return { err: "One of the fields is not defined", user: undefined };
   }
